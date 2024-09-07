@@ -4,11 +4,17 @@ import eslintConfigPrettier from "eslint-config-prettier";
 
 export default [
   {
-    languageOptions: { globals: globals.browser },
+    ignores: ["src/map.js"],
+  },
+  {
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        module: "writable",
+      },
+    },
     rules: {
       "no-console": "error",
-      // ignores: ["**/*.test.js", "!**/eslint.config.js"],
-      // "plugins": ["jest"]
     },
   },
   eslintConfigPrettier,

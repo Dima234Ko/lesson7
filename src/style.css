@@ -1,0 +1,50 @@
+#map {
+  width: 40vw;
+  height: 40vh;
+  position: absolute;
+  top: 40px;
+  left: 0;
+}
+#search-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50vw;
+  display: flex;
+  align-items: center;
+}
+#search {
+  width: 40vw;
+  padding: 5px;
+  box-sizing: border-box;
+}
+#show-button {
+  padding: 5px 10px;
+  margin-left: 5px;
+}
+#weather {
+  position: absolute;
+  top: 40px;
+  left: 40vw;
+  width: 20vw;
+  padding: 5px;
+  box-sizing: border-box;
+}
+#buttons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.button {
+  background: none;
+  border: none;
+  margin-bottom: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: left;
+}
+.button:hover {
+  text-decoration: underline;
+}

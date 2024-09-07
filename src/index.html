@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 7</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" defer></script>
+    <script src="map.js" defer></script>
+</head>
+<body>
+        <div id="search-container">
+            <input type="text" id="search" placeholder="Поиск...">
+            <button id="show-button">Show</button>
+        </div>
+        <div id="map"></div>
+        <div id="weather">
+            <h3>Погода в Москве</h3>
+            <p>Температура: 20°C</p>
+            <p>Ясно, без осадков</p>
+        </div>
+        <div id="buttons">
+            <button class="button" onclick="showHistory()">История</button>
+            <button class="button" onclick="showLocation('Лондон')">Лондон</button>
+            <button class="button" onclick="showLocation('Минск')">Минск</button>
+            <button class="button" onclick="showLocation('Москва')">Москва</button>
+        </div>
+</body>
+</html>
