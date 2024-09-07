@@ -14,6 +14,7 @@
   "dependencies": {
     "eslint-plugin-jest": "^28.8.1",
     "html-validator": "^6.0.1",
+    "husky": "^9.1.5",
     "jest-environment-jsdom": "^29.7.0",
     "lint-staged": "^15.2.9",
     "lodash": "^4.17.21"
@@ -27,13 +28,13 @@
     "eslint": "^9.9.1",
     "eslint-config-prettier": "^9.1.0",
     "globals": "^15.9.0",
-    "husky": "^9.1.5",
     "prettier": "^3.3.3",
+    "husky": "^9.1.5",
     "w3c-html-validator": "^1.8.2"
   },
   "lint-staged": {
-    "sum.js": "eslint  --fix",
     "*.{js,css,md}": "prettier --write",
-    "*.js": "eslint --cache --fix"
+    "*.js": "eslint --cache --fix",
+    "*.html": "html-validator --quiet"
   }
 }
