@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="src/style.css">
 
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" defer></script>
-    <script src="src/map.js" defer></script>
+    <!-- <script src="src/map.js" defer></script> -->
 </head>
 <body>
         <div id="search-container">
             <input type="text" id="search" placeholder="Поиск...">
-            <button id="show-button">Show</button>
+            <button id="searchButton">Show</button>
         </div>
-        <div id="map"></div>
+        <!-- <div id="map"></div> -->
         <div id="weather">
             <h3>Погода в Москве</h3>
             <p>Температура: 20°C</p>
@@ -27,5 +27,7 @@
             <button class="button" onclick="showLocation('Минск')">Минск</button>
             <button class="button" onclick="showLocation('Москва')">Москва</button>
         </div>
+        <script src="src/workAPI.js"></script>
+        <script src="src/weather.js"></script>
 </body>
 </html>
