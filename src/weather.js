@@ -40,6 +40,11 @@ async function print(city){
           // eslint-disable-next-line no-undef
           condition;
 
+
+        var center = Object.values(data.list[0].coord);  
+        // eslint-disable-next-line no-undef
+        window.map.setCenter(center);
+
 }
     
 
