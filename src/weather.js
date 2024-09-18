@@ -1,4 +1,5 @@
 async function getWeather(city) {
+    // eslint-disable-next-line no-undef
     let data = await openweathermapApi(city);
     return data ;   
 }

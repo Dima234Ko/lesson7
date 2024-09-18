@@ -18,6 +18,11 @@ function initYmaps(center, zoom) {
 });
 }
 
-var center = [55.7558, 37.6173];// Координаты
-var zoom = 15; // Более высокий уровень детализации
-initYmaps(center, zoom) 
+
+async function settingCoordinat() {
+  var center = Object.values(await main());
+  var zoom = 10; 
+  initYmaps(center, zoom) 
+}
+
+settingCoordinat();
