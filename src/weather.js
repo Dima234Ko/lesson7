@@ -7,9 +7,11 @@ async function getWeather(city) {
 const buttonElement = document.querySelector('#searchButton');
 
 // Добавляем обработчик события на кнопку
-buttonElement.addEventListener('click', function() {
+buttonElement.addEventListener('click', async function() {
     let city = document.querySelector('#search').value;
-    print(city);
+    await print(city);
+    // eslint-disable-next-line no-undef
+    addButton(city);
 });
 
 
