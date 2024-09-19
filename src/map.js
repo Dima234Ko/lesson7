@@ -18,11 +18,3 @@ function initYmaps(center, zoom) {
 });
 }
 
-
-async function settingCoordinat() {
-  var center = Object.values(await main());
-  var zoom = 10; 
-  initYmaps(center, zoom) 
-}
-
-settingCoordinat();

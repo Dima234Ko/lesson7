@@ -10,7 +10,7 @@ async function getUserCoordinates() {
       });
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
-      return { latitude, longitude };
+      return [ latitude, longitude ];
     } catch (error) {
       throw new Error(`Error getting location: ${error.message}`);
     }
