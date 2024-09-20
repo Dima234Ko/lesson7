@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+import { openweathermapApi } from './workAPI.js'
+
 async function getWeather(city) {
     // eslint-disable-next-line no-undef
     let data = await openweathermapApi(city);
@@ -15,7 +18,7 @@ buttonElement.addEventListener('click', async function() {
 });
 
 
-async function print(city){
+export async function printWeather(city){
     let data = await getWeather(city);
     let tempCity = (data.list[0].main.temp - 273.15).toFixed(0);
     let windSpeed = data.list[0].wind.speed;

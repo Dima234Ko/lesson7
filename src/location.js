@@ -18,7 +18,7 @@ async function getUserCoordinates() {
 
   // Вызов функции через async/await
 // eslint-disable-next-line no-unused-vars
-async function main() {
+export async function main() {
     try {
       const coordinates = await getUserCoordinates();
         return coordinates
