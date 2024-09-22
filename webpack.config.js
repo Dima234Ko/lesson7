@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   output: {
     filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
@@ -44,7 +44,7 @@ module.exports = {
     compress: true,
     port: 8443,
     server: {
-      type: 'https', // Настройка HTTPS
+      type: "https", // Настройка HTTPS
     },
   },
 };

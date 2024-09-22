@@ -2,7 +2,7 @@
 /**
  * Возвращает результат API запроса в формате JSON
  *
- * @param {string} q - Город
+ * @param {string} city - Город
  */
 
 export async function openweathermapApi(city) {
@@ -35,7 +35,7 @@ export async function openweathergeoApi(coords) {
     );
 
     if (!response.ok) {
-      // throw new Error(`Ошибка HTTP: ${response.status}`);
+      throw new Error(`Ошибка HTTP: ${response.status}`);
     }
 
     let responseJson = await response.json();
