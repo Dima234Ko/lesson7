@@ -12,62 +12,59 @@ if (buttonElement !== null) {
   buttonElement.addEventListener("click", async function () {
     let city = document.querySelector("#search").value;
     try {
-    let dataWeather = await getData(city);
-    await printWeather(dataWeather);
-    await setCenterMap(dataWeather) 
-    addButton(city);
-  } catch {
+      let dataWeather = await getData(city);
+      await printWeather(dataWeather);
+      await setCenterMap(dataWeather);
+      addButton(city);
+    } catch {
       alert("Населенный пункт не найден");
     }
   });
 }
 
-async function setCenterMap(dataWeather){
+async function setCenterMap(dataWeather) {
   var center = Object.values(dataWeather.coord);
   window.map.setCenter(center);
 }
 
 export async function getData(city) {
-  
   let data = await getWeather(city);
-    return {
-      tempCity: getTempCity(data),
-      windSpeed: getWindSpeed(data),
-      humidity: getHumidity(data),
-      pressure: getPressure(data),
-      condition: getCondition(data), 
-      coord: getCoord(data), 
-    };
-  
+  return {
+    tempCity: getTempCity(data),
+    windSpeed: getWindSpeed(data),
+    humidity: getHumidity(data),
+    pressure: getPressure(data),
+    condition: getCondition(data),
+    coord: getCoord(data),
+  };
 }
 
 export async function printWeather(dataWeather) {
+  const element = document.querySelector("#weather");
 
-    const element = document.querySelector("#weather");
+  element.innerText =
+    "Температура: " +
+    dataWeather.tempCity +
+    "°C" +
+    "\n" +
+    "Ветер: " +
+    dataWeather.windSpeed +
+    " м/с" +
+    "\n" +
+    "Влажность: " +
+    dataWeather.humidity +
+    "%" +
+    "\n" +
+    "Давление: " +
+    dataWeather.pressure +
+    " атм" +
+    "\n" +
+    dataWeather.condition;
 
-    element.innerText =
-      "Температура: " +
-      dataWeather.tempCity +
-      "°C" +
-      "\n" +
-      "Ветер: " +
-      dataWeather.windSpeed +
-      " м/с" +
-      "\n" +
-      "Влажность: " +
-      dataWeather.humidity +
-      "%" +
-      "\n" +
-      "Давление: " +
-      dataWeather.pressure +
-      " атм" +
-      "\n" +
-      dataWeather.condition;
-
-    uploadButtons();
+  uploadButtons();
 }
 
-export  function getCondition(data){
+export function getCondition(data) {
   switch (data.list[0].weather[0].main) {
     case "Clouds":
       return "Облачно";
@@ -83,22 +80,22 @@ export  function getCondition(data){
   }
 }
 
-export function getTempCity(data){
+export function getTempCity(data) {
   return (data.list[0].main.temp - 273.15).toFixed(0);
 }
 
-export function getWindSpeed(data){
+export function getWindSpeed(data) {
   return data.list[0].wind.speed;
 }
 
-export function getHumidity(data){
+export function getHumidity(data) {
   return data.list[0].main.humidity;
 }
 
-export function getPressure(data){
+export function getPressure(data) {
   return (data.list[0].main.pressure * 0.987).toFixed(0);
 }
 
-export function getCoord(data){
+export function getCoord(data) {
   return data.list[0].coord;
 }

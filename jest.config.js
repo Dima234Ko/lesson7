@@ -194,7 +194,6 @@ const config = {
   // Whether to use watchman for file crawling
   // watchman: true,
 
-
   // Объект, который настраивает минимальный порог принудительного выполнения для результатов покрытия
   coverageThreshold: {
     global: {
