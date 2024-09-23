@@ -7,7 +7,7 @@
     "lint:fix": "prettier --write . && eslint . --fix && html-validator --quiet --continue",
     "prepare": "husky install",
     "serve": "webpack serve --mode=development",
-    "test": "jest"
+    "test": "jest --collectCoverage"
   },
   "keywords": [],
   "author": "",
