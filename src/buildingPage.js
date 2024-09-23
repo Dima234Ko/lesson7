@@ -47,11 +47,7 @@ export function checkQuantityExistence() {
 export async function settingCoordinat() {
   var center = Object.values(await main());
   var zoom = 10;
-
-  // Загружаем Yandex Maps API
   await loadYmaps();
-
-  // Инициализируем карту
   ymaps.ready(() => {
     let map = new ymaps.Map("map", {
       center: center, // Используем координаты центра
@@ -59,7 +55,6 @@ export async function settingCoordinat() {
     });
     window.map = map;
   });
-
   let city = "Москва";
   try {
     let cityName = await openweathergeoApi(center);
@@ -67,7 +62,6 @@ export async function settingCoordinat() {
   } catch (err) {
     console.log(err);
   }
-
   await printWeather(city);
 }
 

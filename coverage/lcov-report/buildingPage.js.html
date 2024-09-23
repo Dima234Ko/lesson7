@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">48.91% </span>
+                <span class="strong">60.46% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>45/92</span>
+                <span class='fraction'>52/86</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.42% </span>
+                <span class="strong">77.77% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/7</span>
+                <span class='fraction'>7/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/6</span>
+                <span class='fraction'>4/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">48.91% </span>
+                <span class="strong">60.46% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>45/92</span>
+                <span class='fraction'>52/86</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -150,13 +150,7 @@
 <a name='L85'></a><a href='#L85'>85</a>
 <a name='L86'></a><a href='#L86'>86</a>
 <a name='L87'></a><a href='#L87'>87</a>
-<a name='L88'></a><a href='#L88'>88</a>
-<a name='L89'></a><a href='#L89'>89</a>
-<a name='L90'></a><a href='#L90'>90</a>
-<a name='L91'></a><a href='#L91'>91</a>
-<a name='L92'></a><a href='#L92'>92</a>
-<a name='L93'></a><a href='#L93'>93</a>
-<a name='L94'></a><a href='#L94'>94</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L88'></a><a href='#L88'>88</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -222,12 +216,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -240,14 +228,14 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable no-console */
 /* eslint-disable no-undef */
@@ -298,11 +286,7 @@ export function checkQuantityExistence() {
 export <span class="fstat-no" title="function not covered" >async function settingCoordinat() {</span>
 <span class="cstat-no" title="statement not covered" >  var center = Object.values(await main());</span>
 <span class="cstat-no" title="statement not covered" >  var zoom = 10;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  // Загружаем Yandex Maps API</span>
 <span class="cstat-no" title="statement not covered" >  await loadYmaps();</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  // Инициализируем карту</span>
 <span class="cstat-no" title="statement not covered" >  ymaps.ready(() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    let map = new ymaps.Map("map", {</span>
 <span class="cstat-no" title="statement not covered" >      center: center, // Используем координаты центра</span>
@@ -310,7 +294,6 @@ export <span class="fstat-no" title="function not covered" >async function setti
 <span class="cstat-no" title="statement not covered" >    });</span>
 <span class="cstat-no" title="statement not covered" >    window.map = map;</span>
 <span class="cstat-no" title="statement not covered" >  });</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  let city = "Москва";</span>
 <span class="cstat-no" title="statement not covered" >  try {</span>
 <span class="cstat-no" title="statement not covered" >    let cityName = await openweathergeoApi(center);</span>
@@ -318,7 +301,6 @@ export <span class="fstat-no" title="function not covered" >async function setti
 <span class="cstat-no" title="statement not covered" >  } catch (err) {</span>
 <span class="cstat-no" title="statement not covered" >    console.log(err);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  await printWeather(city);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
@@ -332,15 +314,15 @@ export <span class="fstat-no" title="function not covered" >async function setti
 <span class="cstat-no" title="statement not covered" >  });</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
-export <span class="fstat-no" title="function not covered" >function uploadButtons() {</span>
-<span class="cstat-no" title="statement not covered" >  let buttons = document.querySelectorAll("#buttons button");</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  buttons.forEach((button) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    button.addEventListener("click", () =&gt; {</span>
+export function uploadButtons() {
+  let buttons = document.querySelectorAll("#buttons button");
+&nbsp;
+  buttons.forEach((button) =&gt; {
+    button.addEventListener("click", () =&gt; {
 <span class="cstat-no" title="statement not covered" >      printWeather(button.textContent);</span>
-<span class="cstat-no" title="statement not covered" >    });</span>
-<span class="cstat-no" title="statement not covered" >  });</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+    });
+  });
+}
 &nbsp;
 &nbsp;</pre></td></tr></table></pre>
 
@@ -349,7 +331,7 @@ export <span class="fstat-no" title="function not covered" >function uploadButto
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-09-23T12:26:57.843Z
+                at 2024-09-23T21:32:02.236Z
             </div>
         <script src="prettify.js"></script>
         <script>

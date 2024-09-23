@@ -2,8 +2,7 @@
 import { checkButtonExistence } from './buildingPage';
 import { addButton } from './buildingPage';
 import { checkQuantityExistence } from './buildingPage';
-
-
+import { uploadButtons } from './buildingPage';
 
 describe('checkButtonExistence function', () => {
   it('Значение, если div кнопок не существует', () => {
@@ -39,5 +38,36 @@ describe('addButton function', () => {
 describe('checkQuantityExistence function', () => {
   it('Проверка количества кнопок', () => {
     expect(checkQuantityExistence()).toBe(false);
+  });
+});
+
+describe('uploadButtons function', () => {
+  beforeEach(() => {
+    jest.resetModules();
+  });
+
+  it('Проверка, что функция uploadButtons корректно добавляет обработчики событий к кнопкам', () => {
+    const buttons = [
+      document.createElement('button'),
+      document.createElement('button'),
+      document.createElement('button'),
+    ]
+
+    buttons.forEach((button) => {
+      button.textContent = `Кнопка ${buttons.indexOf(button) + 1}`;
+    });
+  
+    document.querySelectorAll = jest.fn(() => buttons);
+  
+    buttons.forEach((button) => {
+      jest.spyOn(button, 'addEventListener');
+    });
+
+    uploadButtons();
+
+    buttons.forEach((button) => {
+      expect(button.addEventListener).toHaveBeenCalledTimes(1);
+      expect(button.addEventListener).toHaveBeenCalledWith('click', expect.any(Function));
+    });
   });
 });
