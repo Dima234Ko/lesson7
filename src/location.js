@@ -20,7 +20,6 @@ export async function main() {
     const coordinates = await getUserCoordinates();
     return coordinates;
   } catch (error) {
-    // eslint-disable-next-line no-console
-    console.error(error);
+    return { lat: null, lon: null, error: error.message };
   }
 }

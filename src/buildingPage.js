@@ -19,20 +19,22 @@ export function addButton(buttonName) {
   }
 }
 
-function checkButtonExistence(buttonName) {
-  const buttonsDiv = document.querySelector("#buttons");
-  if (buttonsDiv) {
-    const buttons = buttonsDiv.querySelectorAll("button");
-    for (const button of buttons) {
-      if (button.textContent === buttonName) {
-        return false;
+export function checkButtonExistence(buttonName) {
+  
+    const buttonsDiv = document.querySelector("#buttons");
+    if (buttonsDiv) {
+      const buttons = buttonsDiv.querySelectorAll("button");
+      for (const button of buttons) {
+        if (button.textContent === buttonName) {
+          return false;
+        }
       }
     }
-  }
-  return true;
+    return true;
+
 }
 
-function checkQuantityExistence() {
+export function checkQuantityExistence() {
   const buttonsDiv = document.querySelector("#buttons");
   if (buttonsDiv) {
     const buttons = buttonsDiv.querySelectorAll("button");
@@ -88,3 +90,4 @@ export function uploadButtons() {
     });
   });
 }
+

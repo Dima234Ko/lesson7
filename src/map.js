@@ -1,5 +1,5 @@
 // Функция для вывода карты на страницу
-function initMap(center, zoom) {
+export function initMap(center, zoom) {
   // Создайте карту
   var map = new ymaps.Map("map", {
     center: center,
@@ -14,7 +14,7 @@ function initMap(center, zoom) {
 }
 
 // Функция для вызова initMap при загрузке страницы
-function initYmaps(center, zoom) {
+export function initYmaps(center, zoom) {
   ymaps.ready(function () {
     var mapInstance = initMap(center, zoom);
   });

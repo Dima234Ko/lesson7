@@ -10,15 +10,17 @@ async function getWeather(city) {
 const buttonElement = document.querySelector("#searchButton");
 
 // Добавляем обработчик события на кнопку
-buttonElement.addEventListener("click", async function () {
-  let city = document.querySelector("#search").value;
-  try {
-  await printWeather(city);
-  addButton(city);
-} catch {
-    alert("Населенный пункт не найден");
-  }
-});
+if (buttonElement !== null) {
+  buttonElement.addEventListener("click", async function () {
+    let city = document.querySelector("#search").value;
+    try {
+    await printWeather(city);
+    addButton(city);
+  } catch {
+      alert("Населенный пункт не найден");
+    }
+  });
+}
 
 export async function printWeather(city) {
   
