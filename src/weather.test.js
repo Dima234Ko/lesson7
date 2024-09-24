@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
- 
+
 /* eslint-disable no-undef */
 import {
   getCondition,
@@ -7,6 +7,7 @@ import {
   getWindSpeed,
   getHumidity,
   getPressure,
+  printWeather,
 } from "./weather";
 
 describe("weatherFunctions", () => {
@@ -126,5 +127,31 @@ describe("getCondition", () => {
 
     expect(console.log).toHaveBeenCalledTimes(1);
     expect(console.log).toHaveBeenCalledWith("Undefined");
+  });
+});
+
+describe("printWeather", () => {
+  it("should update the #weather element with weather data", () => {
+    const dataWeather = {
+      tempCity: 25,
+      windSpeed: 5,
+      humidity: 60,
+      pressure: 760,
+      condition: "Солнечно",
+    };
+
+    const weatherElement = document.createElement("div");
+    weatherElement.id = "weather";
+    document.body.appendChild(weatherElement);
+
+    printWeather(dataWeather);
+
+    expect(weatherElement.innerText).toBe(
+      "Температура: 25°C\n" +
+        "Ветер: 5 м/с\n" +
+        "Влажность: 60%\n" +
+        "Давление: 760 атм\n" +
+        "Солнечно",
+    );
   });
 });

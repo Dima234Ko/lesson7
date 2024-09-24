@@ -2,7 +2,7 @@
 /* eslint-disable no-undef */
 import { main } from "./location.js";
 import { openweathergeoApi } from "./workAPI.js";
-import { printWeather } from "./weather.js";
+import { getData, printWeather } from "./weather.js";
 
 export function addButton(buttonName) {
   if (checkButtonExistence(buttonName)) {
@@ -60,7 +60,8 @@ export async function settingCoordinat() {
   } catch (err) {
     console.log(err);
   }
-  await printWeather(city);
+  let dataWeather = await getData(city);
+  await printWeather(dataWeather);
 }
 
 function loadYmaps() {
