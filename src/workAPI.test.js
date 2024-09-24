@@ -1,4 +1,3 @@
- 
 /* eslint-disable no-undef */
 import {
   getAdminURL,
@@ -33,7 +32,7 @@ describe("getKeyUserAPI function", () => {
 });
 
 describe("checkResponse function", () => {
-  it('Проверка, что статус ответа 200', () => {
+  it("Проверка, что статус ответа 200", () => {
     const response = { ok: true, status: 200 };
     expect(checkResponse(response)).toBe(true);
   });

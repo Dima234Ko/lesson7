@@ -45,7 +45,7 @@ export function getKeyUserAPI() {
   return "813c35b4fc3ef7e0c16420d3e7bfdce6";
 }
 
-export function checkResponse(response){
+export function checkResponse(response) {
   if (!response.ok) {
     throw new Error(`Ошибка HTTP: ${response.status}`);
   } else return true;
