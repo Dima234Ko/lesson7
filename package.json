@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "prettier --check . && eslint . ",
-    "lint:fix": "prettier --write . && eslint . --fix && html-validator --quiet --continue",
+    "lint:fix": "prettier --write . && eslint . --fix",
     "prepare": "husky install",
     "serve": "webpack serve --mode=development",
     "test": "jest --collectCoverage"
@@ -43,7 +43,6 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.1.0"
   },
-
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
