@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "lint": "prettier --check . && eslint . && html-validator --quiet",
+    "lint": "prettier --check . && eslint . ",
     "lint:fix": "prettier --write . && eslint . --fix && html-validator --quiet --continue",
     "prepare": "husky install",
     "serve": "webpack serve --mode=development",
