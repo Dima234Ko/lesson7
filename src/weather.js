@@ -1,3 +1,4 @@
+ 
 import { openweathermapApi } from "./workAPI.js";
 import { uploadButtons } from "./buildingPage.js";
 import { addButton } from "./buildingPage.js";
@@ -22,7 +23,7 @@ if (buttonElement !== null) {
   });
 }
 
-async function setCenterMap(dataWeather) {
+export async function setCenterMap(dataWeather) {
   var center = Object.values(dataWeather.coord);
   window.map.setCenter(center);
 }

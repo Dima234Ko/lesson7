@@ -2,7 +2,7 @@
 /* eslint-disable no-undef */
 import { main } from "./location.js";
 import { openweathergeoApi } from "./workAPI.js";
-import { getData, printWeather } from "./weather.js";
+import { getData, printWeather, setCenterMap } from "./weather.js";
 
 export function addButton(buttonName) {
   if (checkButtonExistence(buttonName)) {
@@ -81,6 +81,7 @@ export async function uploadButtons() {
     button.addEventListener("click", async () => {
       let dataWeather = await getData(button.textContent);
       await printWeather(dataWeather);
+      await setCenterMap(dataWeather);
     });
   });
 }
