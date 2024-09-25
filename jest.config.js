@@ -193,6 +193,16 @@ const config = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
+
+  // Объект, который настраивает минимальный порог принудительного выполнения для результатов покрытия
+  coverageThreshold: {
+    global: {
+      branches: 60,
+      functions: 60,
+      lines: 60,
+      statements: 60,
+    },
+  },
 };
 
 module.exports = config;

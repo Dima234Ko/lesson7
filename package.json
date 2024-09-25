@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "lint": "prettier --check . && eslint . && html-validator --quiet",
-    "lint:fix": "prettier --write . && eslint . --fix && html-validator --quiet --continue",
-    "prepare": "husky install"
+    "build": "webpack --mode=development",
+    "deploy": "npx gh-pages -d src",
+    "lint": "prettier --check . && eslint . ",
+    "lint:fix": "prettier --write . && eslint . --fix",
+    "prepare": "husky install",
+    "serve": "webpack serve --mode=development",
+    "test": "jest --collectCoverage"
   },
   "keywords": [],
   "author": "",
@@ -17,24 +21,38 @@
     "husky": "^9.1.5",
     "jest-environment-jsdom": "^29.7.0",
     "lint-staged": "^15.2.9",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "node-fetch": "^3.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.4",
     "@eslint/js": "^9.9.1",
-    "@types/jest": "^29.5.12",
+    "@types/jest": "^29.5.13",
     "babel-jest": "^29.7.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^7.1.2",
     "eslint": "^9.9.1",
     "eslint-config-prettier": "^9.1.0",
+    "gh-pages": "^6.1.1",
     "globals": "^15.9.0",
-    "prettier": "^3.3.3",
+    "html-webpack-plugin": "^5.6.0",
     "husky": "^9.1.5",
-    "w3c-html-validator": "^1.8.2"
+    "jest": "^29.7.0",
+    "prettier": "^3.3.3",
+    "style-loader": "^4.0.0",
+    "w3c-html-validator": "^1.8.2",
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "*.{js,css,md}": "prettier --write",
-    "*.js": "eslint --cache --fix",
-    "*.html": "html-validator --quiet"
+    "*.js": "eslint --cache --fix"
   }
 }
