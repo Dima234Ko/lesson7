@@ -74,12 +74,13 @@ function loadYmaps() {
   });
 }
 
-export function uploadButtons() {
+export async function uploadButtons() {
   let buttons = document.querySelectorAll("#buttons button");
 
   buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-      printWeather(button.textContent);
+    button.addEventListener("click", async () => {
+      let dataWeather = await getData(button.textContent);
+      await printWeather(dataWeather);
     });
   });
 }
