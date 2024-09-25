@@ -1,61 +1,68 @@
+
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <title>Code coverage report for buildingPage.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style type="text/css">
-      .coverage-summary .sorter {
-        background-image: url(sort-arrow-sprite.png);
-      }
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
     </style>
-  </head>
-
-  <body>
-    <div class="wrapper">
-      <div class="pad1">
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
         <h1><a href="index.html">All files</a> buildingPage.js</h1>
-        <div class="clearfix">
-          <div class="fl pad1y space-right2">
-            <span class="strong">58.82% </span>
-            <span class="quiet">Statements</span>
-            <span class="fraction">50/85</span>
-          </div>
-
-          <div class="fl pad1y space-right2">
-            <span class="strong">77.77% </span>
-            <span class="quiet">Branches</span>
-            <span class="fraction">7/9</span>
-          </div>
-
-          <div class="fl pad1y space-right2">
-            <span class="strong">66.66% </span>
-            <span class="quiet">Functions</span>
-            <span class="fraction">4/6</span>
-          </div>
-
-          <div class="fl pad1y space-right2">
-            <span class="strong">58.82% </span>
-            <span class="quiet">Lines</span>
-            <span class="fraction">50/85</span>
-          </div>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">57.47% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>50/87</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">77.77% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>7/9</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">66.66% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>4/6</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">57.47% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>50/87</span>
+            </div>
+        
+            
         </div>
         <p class="quiet">
-          Press <em>n</em> or <em>j</em> to go to the next uncovered block,
-          <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
         <template id="filterTemplate">
-          <div class="quiet">
-            Filter:
-            <input type="search" id="fileSearch" />
-          </div>
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
         </template>
-      </div>
-      <div class="status-line medium"></div>
-      <pre><table class="coverage">
+    </div>
+    <div class='status-line medium'></div>
+    <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
 <a name='L3'></a><a href='#L3'>3</a>
@@ -141,7 +148,9 @@
 <a name='L83'></a><a href='#L83'>83</a>
 <a name='L84'></a><a href='#L84'>84</a>
 <a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -222,6 +231,8 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -230,7 +241,7 @@
 /* eslint-disable no-undef */
 import { main } from "./location.js";
 import { openweathergeoApi } from "./workAPI.js";
-import { getData, printWeather } from "./weather.js";
+import { getData, printWeather, setCenterMap } from "./weather.js";
 &nbsp;
 export function addButton(buttonName) {
   if (checkButtonExistence(buttonName)) {
@@ -302,38 +313,34 @@ export <span class="fstat-no" title="function not covered" >async function setti
 <span class="cstat-no" title="statement not covered" >  });</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
-export function uploadButtons() {
+export async function uploadButtons() {
   let buttons = document.querySelectorAll("#buttons button");
 &nbsp;
   buttons.forEach((button) =&gt; {
-    button.addEventListener("click", () =&gt; {
-<span class="cstat-no" title="statement not covered" >      printWeather(button.textContent);</span>
+    button.addEventListener("click", async () =&gt; {
+<span class="cstat-no" title="statement not covered" >      let dataWeather = await getData(button.textContent);</span>
+<span class="cstat-no" title="statement not covered" >      await printWeather(dataWeather);</span>
+<span class="cstat-no" title="statement not covered" >      await setCenterMap(dataWeather);</span>
     });
   });
 }
 &nbsp;</pre></td></tr></table></pre>
 
-      <div class="push"></div>
-      <!-- for sticky footer -->
-    </div>
-    <!-- /wrapper -->
-    <div class="footer quiet pad2 space-top1 center small">
-      Code coverage generated by
-      <a
-        href="https://istanbul.js.org/"
-        target="_blank"
-        rel="noopener noreferrer"
-        >istanbul</a
-      >
-      at 2024-09-24T19:12:58.772Z
-    </div>
-    <script src="prettify.js"></script>
-    <script>
-      window.onload = function () {
-        prettyPrint();
-      };
-    </script>
-    <script src="sorter.js"></script>
-    <script src="block-navigation.js"></script>
-  </body>
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2024-09-25T12:09:31.714Z
+            </div>
+        <script src="prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="sorter.js"></script>
+        <script src="block-navigation.js"></script>
+    </body>
 </html>
+    
