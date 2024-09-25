@@ -4,7 +4,7 @@ import eslintConfigPrettier from "eslint-config-prettier";
 
 export default [
   {
-    ignores: ["src/map.js"],
+    ignores: ["docs/map.js", "dist/main.js"],
   },
   {
     languageOptions: {
