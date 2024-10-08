@@ -11,32 +11,37 @@ const buttonElement = document.querySelector("#searchButton");
 if (buttonElement !== null) {
   buttonElement.addEventListener("click", async function () {
     let city = document.querySelector("#search").value;
-    try {
-      let dataWeather = await getData(city);
+    let dataWeather = await getData(city);
+    if (!(dataWeather === undefined)) {
       await printWeather(dataWeather);
       await setCenterMap(dataWeather);
       addButton(city);
-    } catch {
-      alert("Населенный пункт не найден");
     }
   });
 }
 
-async function setCenterMap(dataWeather) {
+export async function setCenterMap(dataWeather) {
   var center = Object.values(dataWeather.coord);
   window.map.setCenter(center);
 }
 
 export async function getData(city) {
-  let data = await getWeather(city);
-  return {
-    tempCity: getTempCity(data),
-    windSpeed: getWindSpeed(data),
-    humidity: getHumidity(data),
-    pressure: getPressure(data),
-    condition: getCondition(data),
-    coord: getCoord(data),
-  };
+  if (city.length == 0) {
+    alert("Введите населенный пункт");
+  } else
+    try {
+      let data = await getWeather(city);
+      return {
+        tempCity: getTempCity(data),
+        windSpeed: getWindSpeed(data),
+        humidity: getHumidity(data),
+        pressure: getPressure(data),
+        condition: getCondition(data),
+        coord: getCoord(data),
+      };
+    } catch {
+      alert("Населенный пункт не найден");
+    }
 }
 
 export async function printWeather(dataWeather) {

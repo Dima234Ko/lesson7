@@ -20,9 +20,9 @@
         <h1><a href="index.html">All files</a> workAPI.js</h1>
         <div class="clearfix">
           <div class="fl pad1y space-right2">
-            <span class="strong">48.07% </span>
+            <span class="strong">46.15% </span>
             <span class="quiet">Statements</span>
-            <span class="fraction">25/52</span>
+            <span class="fraction">24/52</span>
           </div>
 
           <div class="fl pad1y space-right2">
@@ -38,9 +38,9 @@
           </div>
 
           <div class="fl pad1y space-right2">
-            <span class="strong">48.07% </span>
+            <span class="strong">46.15% </span>
             <span class="quiet">Lines</span>
-            <span class="fraction">25/52</span>
+            <span class="fraction">24/52</span>
           </div>
         </div>
         <p class="quiet">
@@ -107,7 +107,8 @@
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -156,9 +157,10 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">export <span class="fstat-no" title="function not covered" >async function openweathermapApi(city) {</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export <span class="fstat-no" title="function not covered" >async function openweathermapApi(city) {</span>
 <span class="cstat-no" title="statement not covered" >  let response = await fetch(</span>
 <span class="cstat-no" title="statement not covered" >    getAdminURL() +</span>
 <span class="cstat-no" title="statement not covered" >      "q=" +</span>
@@ -205,11 +207,12 @@ export function getKeyUserAPI() {
   return "813c35b4fc3ef7e0c16420d3e7bfdce6";
 }
 &nbsp;
-export function checkResponse(response){
-  if (!response.ok) {
-    throw new Error(`Ошибка HTTP: ${response.status}`);
-  }<span class="branch-0 cbranch-no" title="branch not covered" > else return true;</span>
-}</pre></td></tr></table></pre>
+export function checkResponse(response) {
+  if (!response.ok) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    throw new Error(`Ошибка HTTP: ${response.status}`);</span>
+  } else return true;
+}
+&nbsp;</pre></td></tr></table></pre>
 
       <div class="push"></div>
       <!-- for sticky footer -->
@@ -223,7 +226,7 @@ export function checkResponse(response){
         rel="noopener noreferrer"
         >istanbul</a
       >
-      at 2024-09-24T19:12:58.772Z
+      at 2024-09-25T12:09:31.714Z
     </div>
     <script src="prettify.js"></script>
     <script>

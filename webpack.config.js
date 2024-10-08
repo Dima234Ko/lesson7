@@ -37,14 +37,14 @@ module.exports = {
       },
     ],
   },
-  devServer: {
-    static: {
-      directory: path.join(__dirname, "public"),
-    },
-    compress: true,
-    port: 8443,
-    server: {
-      type: "https", // Настройка HTTPS
-    },
-  },
+  // devServer: {
+  //   static: {
+  //     directory: path.join(__dirname, "public"),
+  //   },
+  //   compress: true,
+  //   port: 8443,
+  //   server: {
+  //     type: "https", // Настройка HTTPS
+  //   },
+  // },
 };

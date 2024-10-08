@@ -20,9 +20,9 @@
         <h1><a href="index.html">All files</a> buildingPage.js</h1>
         <div class="clearfix">
           <div class="fl pad1y space-right2">
-            <span class="strong">58.82% </span>
+            <span class="strong">57.47% </span>
             <span class="quiet">Statements</span>
-            <span class="fraction">50/85</span>
+            <span class="fraction">50/87</span>
           </div>
 
           <div class="fl pad1y space-right2">
@@ -38,9 +38,9 @@
           </div>
 
           <div class="fl pad1y space-right2">
-            <span class="strong">58.82% </span>
+            <span class="strong">57.47% </span>
             <span class="quiet">Lines</span>
-            <span class="fraction">50/85</span>
+            <span class="fraction">50/87</span>
           </div>
         </div>
         <p class="quiet">
@@ -141,7 +141,9 @@
 <a name='L83'></a><a href='#L83'>83</a>
 <a name='L84'></a><a href='#L84'>84</a>
 <a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -222,6 +224,8 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -230,7 +234,7 @@
 /* eslint-disable no-undef */
 import { main } from "./location.js";
 import { openweathergeoApi } from "./workAPI.js";
-import { getData, printWeather } from "./weather.js";
+import { getData, printWeather, setCenterMap } from "./weather.js";
 &nbsp;
 export function addButton(buttonName) {
   if (checkButtonExistence(buttonName)) {
@@ -302,12 +306,14 @@ export <span class="fstat-no" title="function not covered" >async function setti
 <span class="cstat-no" title="statement not covered" >  });</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
-export function uploadButtons() {
+export async function uploadButtons() {
   let buttons = document.querySelectorAll("#buttons button");
 &nbsp;
   buttons.forEach((button) =&gt; {
-    button.addEventListener("click", () =&gt; {
-<span class="cstat-no" title="statement not covered" >      printWeather(button.textContent);</span>
+    button.addEventListener("click", async () =&gt; {
+<span class="cstat-no" title="statement not covered" >      let dataWeather = await getData(button.textContent);</span>
+<span class="cstat-no" title="statement not covered" >      await printWeather(dataWeather);</span>
+<span class="cstat-no" title="statement not covered" >      await setCenterMap(dataWeather);</span>
     });
   });
 }
@@ -325,7 +331,7 @@ export function uploadButtons() {
         rel="noopener noreferrer"
         >istanbul</a
       >
-      at 2024-09-24T19:12:58.772Z
+      at 2024-09-25T12:09:31.714Z
     </div>
     <script src="prettify.js"></script>
     <script>

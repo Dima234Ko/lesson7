@@ -1,4 +1,4 @@
-async function getUserCoordinates() {
+export async function getUserCoordinates() {
   if (!navigator.geolocation) {
     throw new Error("Geolocation is not supported by this browser");
   }
