@@ -1,5 +1,6 @@
 import "./style.css";
 
-import { settingCoordinat } from "./buildingPage.js";
+import { settingCoordinat, loadButtons } from "./buildingPage.js";
 
 settingCoordinat();
+loadButtons();

@@ -1,8 +1,21 @@
+ 
 /* eslint-disable no-console */
 /* eslint-disable no-undef */
 import { main } from "./location.js";
 import { openweathergeoApi } from "./workAPI.js";
 import { getData, printWeather, setCenterMap } from "./weather.js";
+import {
+  setCookie,
+  deleteCookieWithValue,
+  getCookieValuesWithButton,
+  clearAllCookies,
+} from "./workingCookies.js";
+
+export function loadButtons() {
+  let buttons = getCookieValuesWithButton();
+  clearAllCookies(buttons);
+  buttons.forEach((buttonName) => addButton(buttonName));
+}
 
 export function addButton(buttonName) {
   if (checkButtonExistence(buttonName)) {
@@ -10,12 +23,14 @@ export function addButton(buttonName) {
       const buttonsDiv = document.querySelector("#buttons");
       const buttons = buttonsDiv.querySelectorAll("button");
       buttons[0].remove();
+      deleteCookieWithValue(buttons[0].textContent);
     }
     const button = document.createElement("button");
     button.textContent = buttonName;
     button.className = "button";
     const buttonsDiv = document.querySelector("#buttons");
     buttonsDiv.appendChild(button);
+    setCookie("button_" + buttonsDiv.childElementCount, buttonName);
   }
 }
 
@@ -76,7 +91,6 @@ function loadYmaps() {
 
 export async function uploadButtons() {
   let buttons = document.querySelectorAll("#buttons button");
-
   buttons.forEach((button) => {
     button.addEventListener("click", async () => {
       let dataWeather = await getData(button.textContent);
