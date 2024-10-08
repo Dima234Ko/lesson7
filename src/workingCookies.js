@@ -1,6 +1,4 @@
 /* eslint-disable no-unused-vars */
- 
- 
 
 export function setCookie(name, value) {
   const cookieString = `${name}_${new Date().getTime()}=${value};`;

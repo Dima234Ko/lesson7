@@ -1,5 +1,3 @@
- 
- 
 import { openweathermapApi } from "./workAPI.js";
 import { uploadButtons } from "./buildingPage.js";
 import { addButton } from "./buildingPage.js";

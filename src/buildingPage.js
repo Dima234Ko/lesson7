@@ -1,4 +1,3 @@
- 
 /* eslint-disable no-console */
 /* eslint-disable no-undef */
 import { main } from "./location.js";
